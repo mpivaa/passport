@@ -4,7 +4,7 @@ Passport::Application.routes.draw do
     devise_for :users
   end
 
-  namespace :api, defaults: { format: :json } do
+  scope :api, defaults: { format: :json } do
     resources :users
     resources :apps
   end
