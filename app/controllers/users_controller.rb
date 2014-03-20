@@ -93,6 +93,7 @@ class UsersController < ApplicationController
         params[:user].delete(:password_confirmation)
       end
       params[:apps_confirmed] = params[:apps_confirmed] || []
+      params[:apps_prompted] = params[:apps_prompted] || []
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end
