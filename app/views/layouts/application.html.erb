@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Acess@</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body id="app">
+	 <header>
+	    <div class="row">
+        <div class="col-sm-6">
+           <div class="brand"><a href="/"><%= image_tag "logo.png" %></a></div>
+        </div>
+        <div class="col-sm-6">
+        <% if user_signed_in? %>
+          <div class="pull-right panel-user">
+            <span><%= current_user.email %></span>
+            <%= link_to apps_path, :style=>'vertical-align: text-top;' do -%>
+	            <i class="fa fa-th"></i>
+	          <% end -%>
+            <%= link_to users_path do -%>
+	            <i class="fa fa-users"></i>
+	          <% end -%>
+            <%= link_to destroy_user_session_path, :method => :delete do -%>
+	            <i class="fa fa-power-off"></i>
+	          <% end -%>
+          </div>
+        <% end %>
+        </div>
+	    </div>
+		</header>
+		<section>
+			<%= yield %>
+		</section>
+		<footer>
+		  <div class="footer-gv">
+	      <p>FGVces - www.fgv.br/ces | Avenida 9 de Julho, 2029 - 11º andar - São Paulo/SP | (11) 3799-3342<br>
+	      © 2014. Todos os direitos reservados.</p>
+		  </div>
+		</footer>
+	</body>
+</html>

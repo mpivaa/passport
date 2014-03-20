@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :class=>'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, :class=>'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, :class=>'form-control' %>
+  </div>
+  <h2>Aplicativos disponíveis</h2>
+  <ul style="list-style: none; margin: 20px -20px;">
+    <% App.all.each do |app| %>
+      <li>
+        <%= hidden_field_tag "apps_prompted[]", app.id %>
+        <%= check_box_tag "apps_confirmed[]", app.id, @user.has_access_to(app) %>
+        <%= label_tag app.name, nil, :style=>'vertical-align: top;' %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="actions">
+    <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

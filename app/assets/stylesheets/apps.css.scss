@@ -1,0 +1,112 @@
+
+
+/* By Tracersoft - Favato */
+
+/* Sticky footer
+------------------------------------------------------------------------------------ */
+html { position: relative; min-height: 100%; }
+section { /* Margin bottom by footer height */ margin-bottom: 60px; }
+footer { position: absolute; bottom: 0; width: 100%; /* Set the fixed height of the footer here */ height: 70px;}
+
+/* layout
+------------------------------------------------------------------------------------ */
+body {background-color: #f9f9f9; overflow-x: hidden;}
+header { background-color: #fff; border-bottom: 3px solid #f3f3f3; height: 75px; color: #2b628b;}
+.brand {margin: 20px 0 0 20px;}
+.panel-user {margin: 25px 20px 0 0;}
+section {margin: 0 20px;}
+footer { background-color: #DFDFDF; color: #919191; padding: 20px;}
+.footer-gv {padding-left:100px;}
+.footer-gv:after {content: url(image-path('gv-footer.png')); position: absolute; left: 20px; top: 20px;}
+.list-apps, .list-sites { list-style: none; margin: 10px 0px 0px 0px; padding: 0px;}
+.list-apps li, .list-sites li {display: inline; padding: 16px 15px 25px 0; position: relative;}
+.list-sites li {padding: 10px 8px;display: inline-block;}
+.font-apps {font-size: 1.75em !important; margin-top: 0.07em !important;}
+.fa-2x {font-size:1.7em}
+.select-site {position:absolute; top: 47px; left: 0px; width: 275px;background: #fff;border: 3px solid #dfdfdf;padding: 15px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.list-apps li .select-site {display: none;}
+.list-apps li:hover .select-site {display: block;}
+.list-apps li a, .list-apps li a:hover { text-decoration: none;}
+.fa.fa-circle.fa-stack-2x { opacity:0.80; -moz-opacity: 0.80; filter: alpha(opacity=80);}
+.fa.fa-circle.fa-stack-2x.font-apps { opacity:1.0; -moz-opacity: 1.0; filter: alpha(opacity=100);}
+
+/* color
+------------------------------------------------------------------------------------ */
+.agenda, .agenda:hover {color:#539d33;}
+.cms, .cms:hover {color:#ee6a00;}
+.pesquisa, .pesquisa:hover {color:#47637e;}
+.financeiro, .financeiro:hover {color:#4b659d;}
+.equipe, .equipe:hover {color:#3980bc;}
+.helpdesk, .helpdesk:hover {color:#1da1c8;}
+.panel-user i {font-size: 20px; margin-left: 10px;}
+.btn:hover, .btn:focus { background-color: #428bca; color: #fff; }
+.relative { position: relative; min-height: 40px; margin-bottom: 20px; }
+.form-actions { background-color: #f7f7f7; padding: 15px; margin-bottom: 20px; }
+.responsive-table { min-width: 320px; overflow-x: auto; }
+.table tr th { background-color: #f7f7f7; }
+.table tr th, .table tr td { font-size: 13px; }
+.table tr td:last-child { width: 80px; }
+.table tr td:last-child a { color: #303030 !important; margin: 0 5px; font-size: 14px; }
+#app-login { padding-top: 7%; padding-bottom: 40px; background-color: #F9F9F9; }
+.container-login { ext-align:center;position:absolute; top:50%; left:50%;
+ width: 300px; /* Tamanho da Largura da Div */
+height:260px; /* Tamanho da Altura da Div */
+margin-top:-130px; /* ou seja ele pega 50% da altura tela e sobe metade do valor da altura no caso 100 */
+ margin-left: -150px; /* ou seja ele pega 50% da largura tela e diminui  metade do valor da largura no caso 250 */
+}
+
+/* Login
+------------------------------------------------------------------------------------ */
+.brand-login { text-align: center; margin: 5px 0 25px 0;}
+.form-signin { padding: 20px; background: #fff; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; position: relative; display: inline-block; text-align: left; min-width: 300px; border: 3px solid #f0f0f0;}
+.form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 15px; margin-top: 0px; }
+.form-signin .checkbox { font-weight: normal; }
+.form-signin .form-control { position: relative; height: auto;  padding: 10px; font-size: 16px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.form-signin .form-control:focus { z-index: 2; }
+.form-signin input[type="email"] { margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+.form-signin input[type="password"] { margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0;}
+
+/* Login
+------------------------------------------------------------------------------------ */
+.breadcrumbs { background-color: #f3f3f3; padding: 10px 15px; color: #bdc3c7; -webkit-border-bottom-right-radius: 3px; -webkit-border-bottom-left-radius: 3px; -moz-border-radius-bottomright: 3px; -moz-border-radius-bottomleft: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; margin-bottom: 20px; }
+.breadcrumbs a { color: #bdc3c7; }
+.breadcrumbs a:hover { text-decoration: underline; }
+h1 { font-size: 28px; margin: 20px 0; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h1, h2 { color: #000; }
+h3, h4 { color: #303030; }
+.sidebar-menu { position: absolute; top: 6px; right: 0px; }
+.sidebar-menu ul { list-style: none; }
+.sidebar-menu ul li { display: inline-block; padding: 0 2px; }
+.sidebar-menu ul li .fa { margin-right: 8px; }
+.sidebar-menu ul li a { background-color: #f3f3f3; color: #303030; padding: 8px 12px; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.sidebar-menu ul li a:hover { background-color: #428bca; color: #fff; }
+.btn:hover, .btn:focus { background-color: #428bca; color: #fff; }
+.relative { position: relative; min-height: 40px; margin-bottom: 20px; }
+.form-actions { background-color: #f7f7f7; padding: 15px; margin-bottom: 20px; }
+.responsive-table { min-width: 320px; overflow-x: auto; }
+.table tr th { background-color: #f7f7f7; }
+.table tr th, .table tr td { font-size: 13px; }
+.table tr td:last-child { width: 80px; }
+.table tr td:last-child a { color: #303030 !important; margin: 0 5px; font-size: 14px; }
+
+ul.list-apps a:hover { text-decoration: none; }
+.panel-user a:hover { text-decoration: none; }
+
+.field {
+	margin: 10px 0px;
+}
+
+.login-box {
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #f0f0f0;
+	border-bottom: 3px solid #f0f0f0;
+	border-radius: 6px;
+	width: 320px;
+	margin-top: 100px;
+}
+
+.login header {display: none}

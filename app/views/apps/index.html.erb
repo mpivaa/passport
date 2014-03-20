@@ -1,0 +1,31 @@
+<div class="relative">
+  <h1>Aplicativos</h1>
+  <div class="sidebar-menu">
+      <ul>
+          <li>
+            <%= link_to '<i class="fa fa-plus"></i>Inserir'.html_safe, new_app_path %>
+          </li>
+      </ul>
+  </div>
+</div>
+<% if notice %>
+<p class="alert alert-success alert-dismissable"><%= notice %></p>
+<% end %>
+<table class="table table-hover">
+<% @apps.each do |app| %>
+  <tr>
+    <td>
+      <%= link_to action: 'access', id: app.id do %>
+        <%= app.name %>
+      <% end %>
+    </td>
+    <td>
+      <%= app.uri %>
+    </td>
+    <td>
+      <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_app_path(app) %>
+      <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, app, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  <% end %>
+  </tr>
+</table>
