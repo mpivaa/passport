@@ -2,7 +2,7 @@ class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy, :access]
 
   def dashboard
-    @apps = App.joins(:user_apps).where('user_apps.app_id = apps.id AND user_apps.user_id = ?', current_user.id)
+    @apps = App.all
   end
 
   # GET /apps

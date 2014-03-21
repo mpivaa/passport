@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_apps_options, only: [:edit, :new, :update, :create]
 
-  def current_user
+  def active_user
     access_key = AccessKey.find_by_key(params[:k])
     respond_to do |format|
       format.json {render json: access_key.user}

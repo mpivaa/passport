@@ -8,7 +8,7 @@
 <% @apps.each do |app| %>
   <%= link_to({:action=>'access', :id=>app.id}, target: '_blank') do %>
     <%= app.icon.html_safe %>
-    <%= app.name %>
+    <div class="app-name"><%= app.name %></div>
   <% end %>
 <% end %>
 </ul>

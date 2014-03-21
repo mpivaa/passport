@@ -5,8 +5,10 @@ Passport::Application.routes.draw do
   end
 
   scope :api, defaults: { format: :json } do
-    resources :users
-    resources :apps
+    get 'validate_key' => 'api#validate_key'
+    get 'users/current_user' => 'users#active_user'
+    resources :users, as: 'api_users'
+    resources :apps, as: 'api_apps'
   end
 
   resources :users
