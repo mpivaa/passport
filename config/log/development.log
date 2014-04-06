@@ -1,0 +1,216 @@
+2014-03-23 17:58:34 -0300 INFO: jruby 1.7.11 (1.9.3p392) 2014-02-24 86339bb on OpenJDK 64-Bit Server VM 1.6.0_30-b30 [linux-amd64]
+2014-03-23 17:58:34 -0300 INFO: using 1:5 runtime pool with acquire timeout of 5.0 seconds
+2014-03-23 17:58:35 -0300 INFO: An exception happened during JRuby-Rack startup
+no such file to load -- /apps/passport/config/config/environment.rb
+--- System
+jruby 1.7.11 (1.9.3p392) 2014-02-24 86339bb on OpenJDK 64-Bit Server VM 1.6.0_30-b30 [linux-amd64]
+Time: 2014-03-23 17:58:35 -0300
+Server: Apache Tomcat/7.0.47
+jruby.home: /home/marcelo/.rvm/rubies/jruby-1.7.11
+
+--- Context Init Parameters:
+jruby.compat.version = 1.9.3
+jruby.initial.runtimes = 1
+jruby.max.runtimes = 5
+jruby.min.runtimes = 1
+jruby.rack.error = false
+jruby.rack.layout_class = JRuby::Rack::FileSystemLayout
+jruby.rack.logging = JUL
+jruby.rack.logging.name = org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[default]
+jruby.runtime.acquire.timeout = 5.0
+public.root = public
+rails.env = development
+rails.root = /apps/passport/config
+
+--- Backtrace
+LoadError: no such file to load -- /apps/passport/config/config/environment.rb
+              load at org/jruby/RubyKernel.java:1101
+  load_environment at file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25
+  load_environment at file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76
+            (root) at <script>:1
+
+--- RubyGems
+Gem.dir: /home/marcelo/.rvm/gems/jruby-1.7.11
+Gem.path:
+/home/marcelo/.rvm/gems/jruby-1.7.11
+/home/marcelo/.rvm/gems/jruby-1.7.11@global
+Activated gems:
+
+--- Bundler
+undefined method `bundle_path' for Bundler:Module
+
+--- JRuby-Rack Config
+compat_version = RUBY1_9
+default_logger = org.jruby.rack.logging.StandardOutLogger@2b5043e1
+equals = <error: >
+err = java.io.PrintStream@6bd59841
+filter_adds_html = true
+filter_verifies_resource = false
+ignore_environment = false
+initial_memory_buffer_size = 
+initial_runtimes = 1
+jms_connection_factory = 
+jms_jndi_properties = 
+logger = org.jruby.rack.logging.JulLogger@6d44826c
+logger_class_name = JUL
+logger_name = org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[default]
+maximum_memory_buffer_size = 
+maximum_runtimes = 5
+num_initializer_threads = 
+out = java.io.PrintStream@13821b95
+rackup = 
+rackup_path = 
+rewindable = true
+runtime_arguments = 
+runtime_environment = 
+runtime_timeout_seconds = 
+serial_initialization = false
+servlet_context = org.apache.catalina.core.ApplicationContextFacade@4b65e7da
+throw_init_exception = true
+
+--- $LOAD_PATH:
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/1.9/site_ruby
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/shared
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/1.9
+2014-03-23 17:58:35 -0300 SEVERE: unable to initialize application
+org.jruby.exceptions.RaiseException: (LoadError) no such file to load -- /apps/passport/config/config/environment.rb
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1101)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76)
+	at RUBY.(root)(<script>:1)
+
+2014-03-23 17:58:35 -0300 INFO: added application to pool, size now = 1
+2014-03-23 17:58:35 -0300 SEVERE: Exception sending context initialized event to listener instance of class org.jruby.rack.rails.RailsServletContextListener
+org.jruby.rack.RackInitializationException: no such file to load -- /apps/passport/config/config/environment.rb
+	from org/jruby/RubyKernel.java:1101:in `load'
+	from file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25:in `load_environment'
+	from file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.RackInitializationException.wrap(RackInitializationException.java:29)
+	at org.jruby.rack.RackApplicationFactoryDecorator.init(RackApplicationFactoryDecorator.java:104)
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:50)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1146)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:701)
+Caused by: org.jruby.exceptions.RaiseException: (LoadError) no such file to load -- /apps/passport/config/config/environment.rb
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1101)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76)
+	at RUBY.(root)(<script>:1)
+
+2014-03-23 18:01:49 -0300 INFO: jruby 1.7.11 (1.9.3p392) 2014-02-24 86339bb on OpenJDK 64-Bit Server VM 1.6.0_30-b30 [linux-amd64]
+2014-03-23 18:01:49 -0300 INFO: using 1:5 runtime pool with acquire timeout of 5.0 seconds
+2014-03-23 18:01:50 -0300 INFO: An exception happened during JRuby-Rack startup
+no such file to load -- /apps/passport/config/config/environment.rb
+--- System
+jruby 1.7.11 (1.9.3p392) 2014-02-24 86339bb on OpenJDK 64-Bit Server VM 1.6.0_30-b30 [linux-amd64]
+Time: 2014-03-23 18:01:50 -0300
+Server: Apache Tomcat/7.0.47
+jruby.home: /home/marcelo/.rvm/rubies/jruby-1.7.11
+
+--- Context Init Parameters:
+jruby.compat.version = 1.9.3
+jruby.initial.runtimes = 1
+jruby.max.runtimes = 5
+jruby.min.runtimes = 1
+jruby.rack.error = false
+jruby.rack.layout_class = JRuby::Rack::FileSystemLayout
+jruby.rack.logging = JUL
+jruby.rack.logging.name = org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[default]
+jruby.runtime.acquire.timeout = 5.0
+public.root = public
+rails.env = development
+rails.root = /apps/passport/config
+
+--- Backtrace
+LoadError: no such file to load -- /apps/passport/config/config/environment.rb
+              load at org/jruby/RubyKernel.java:1101
+  load_environment at file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25
+  load_environment at file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76
+            (root) at <script>:1
+
+--- RubyGems
+Gem.dir: /home/marcelo/.rvm/gems/jruby-1.7.11
+Gem.path:
+/home/marcelo/.rvm/gems/jruby-1.7.11
+/home/marcelo/.rvm/gems/jruby-1.7.11@global
+Activated gems:
+
+--- Bundler
+undefined method `bundle_path' for Bundler:Module
+
+--- JRuby-Rack Config
+compat_version = RUBY1_9
+default_logger = org.jruby.rack.logging.StandardOutLogger@53885c6b
+equals = <error: >
+err = java.io.PrintStream@dc21cbf
+filter_adds_html = true
+filter_verifies_resource = false
+ignore_environment = false
+initial_memory_buffer_size = 
+initial_runtimes = 1
+jms_connection_factory = 
+jms_jndi_properties = 
+logger = org.jruby.rack.logging.JulLogger@52079efa
+logger_class_name = JUL
+logger_name = org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[default]
+maximum_memory_buffer_size = 
+maximum_runtimes = 5
+num_initializer_threads = 
+out = java.io.PrintStream@1ff7d2dc
+rackup = 
+rackup_path = 
+rewindable = true
+runtime_arguments = 
+runtime_environment = 
+runtime_timeout_seconds = 
+serial_initialization = false
+servlet_context = org.apache.catalina.core.ApplicationContextFacade@6b5aba3a
+throw_init_exception = true
+
+--- $LOAD_PATH:
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/1.9/site_ruby
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/shared
+/home/marcelo/.rvm/rubies/jruby-1.7.11/lib/ruby/1.9
+2014-03-23 18:01:50 -0300 SEVERE: unable to initialize application
+org.jruby.exceptions.RaiseException: (LoadError) no such file to load -- /apps/passport/config/config/environment.rb
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1101)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76)
+	at RUBY.(root)(<script>:1)
+
+2014-03-23 18:01:50 -0300 INFO: added application to pool, size now = 1
+2014-03-23 18:01:50 -0300 SEVERE: Exception sending context initialized event to listener instance of class org.jruby.rack.rails.RailsServletContextListener
+org.jruby.rack.RackInitializationException: no such file to load -- /apps/passport/config/config/environment.rb
+	from org/jruby/RubyKernel.java:1101:in `load'
+	from file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25:in `load_environment'
+	from file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.RackInitializationException.wrap(RackInitializationException.java:29)
+	at org.jruby.rack.RackApplicationFactoryDecorator.init(RackApplicationFactoryDecorator.java:104)
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:50)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1146)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:701)
+Caused by: org.jruby.exceptions.RaiseException: (LoadError) no such file to load -- /apps/passport/config/config/environment.rb
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1101)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails/environment2.rb:25)
+	at RUBY.load_environment(file:/home/marcelo/.rvm/gems/jruby-1.7.11/gems/jruby-rack-1.1.14/lib/jruby-rack-1.1.14.jar!/jruby/rack/rails_booter.rb:76)
+	at RUBY.(root)(<script>:1)
+

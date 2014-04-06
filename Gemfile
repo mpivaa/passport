@@ -1,13 +1,16 @@
 source 'https://rubygems.org'
 
+gem 'trinidad', :platform=>:jruby
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
 gem 'thread_safe', '0.2.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'jdbc-sqlite3', :platform=>:jruby
+gem 'activerecord-jdbcsqlite3-adapter', :platform=>:jruby
 
+gem 'sqlite3', :platform=>:ruby
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -35,7 +38,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'font-awesome-sass'
 
-gem 'therubyracer'
+gem 'therubyrhino', :platform=>:jruby
+gem 'therubyracer', :platform=>:ruby
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
